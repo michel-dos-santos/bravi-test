@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Balanced Brackets</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" >
+</head>
+<body>
+	<div class="container-fluid">
+		<br>
+		<div class="row">
+			<div class="col">
+				<form action=validateBrackets method="post" >
+					<label> Enter your Brackets Sequence to be validated: </label>
+					<input name="bracketsSequence" placeholder="Example: { } [ ] ( )" onkeydown="return bracketsOnly(event)">
+					<button class="btn btn-primary" type="submit">Validate</button>
+				</form>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<div class="text-success" th:if="${resultBracketsValid} != null" th:text="${resultBracketsValid}"></div>
+				<div class="text-danger" th:if="${resultBracketsInvalid} != null" th:text="${resultBracketsInvalid}"></div>
+			</div>
+		</div>
+	</div>
+	
+	<script type="text/javascript" src="/js/brackets.js"></script>
+</body>
+</html>
