@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="test">
+      <h1 align="center"><strong>Current weather in your city</strong></h1>
+      <form align="center" [formGroup]="searchForm" (ngSubmit)="showWeather()">
+        <mat-form-field class="weather-form-field" >
+          <input matInput type="search" placeholder="Your city name" formControlName="city">
+        </mat-form-field>
+        <button mat-raised-button color="primary" type="submit">Verify</button>
+      </form>
+      <div align="center">
+        <strong>
+          <h5>Current Weather</h5>
+          <p>Weather: {{openWeatherDataModel?.main}} </p>
+          <p>Description: {{openWeatherDataModel?.description}} </p>
+        </strong>
+      </div>
+    </div>
+</div>
